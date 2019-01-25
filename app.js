@@ -30,3 +30,25 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+    const err = new Error ('Not Found');
+    err.status = 404;
+    next(err);
+});
+
+// 
+// If our application encounters an error, we'll display the error and stack trace accordingly
+
+app.use((req, res , next) => {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: err
+    });
+});
+
+app.listen(3000, (err) => {
+    if (err) console.log(err.message);
+    console.log("App running on port 3000");
+});
