@@ -5,8 +5,8 @@ cookieParser    = require('cookie-parser'),
 bodyParser      = require('body-parser'),
 session         = require('express-session'),
 dotenv          = require('dotenv'),
-passport        = require('passport'),
-Auth0Strategy   = require('passport-auth000');
+passport        = require('passport');
+Auth0Strategy   = require('passport-auth0');
 
 dotenv.load(); // for environment variables
 
